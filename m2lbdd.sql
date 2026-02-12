@@ -1,8 +1,25 @@
+-- C
 CREATE TABLE "TYPE" (
 	"id_type"	INTEGER,
 	"libellé"	TEXT NOT NULL UNIQUE,
 	PRIMARY KEY("id_type" AUTOINCREMENT)
 );
+
+-- Insertion des données de TYPE 
+
+INSERT INTO Type (libellé) VALUES ('PC');
+INSERT INTO Type (libellé) VALUES ('Écran');
+INSERT INTO Type (libellé) VALUES ('CPU');
+INSERT INTO Type (libellé) VALUES ('RAM');
+INSERT INTO Type (libellé) VALUES ('Disque');
+INSERT INTO Type (libellé) VALUES ('GPU');
+INSERT INTO Type (libellé) VALUES ('Carte réseau');
+INSERT INTO Type (libellé) VALUES ('OS');
+INSERT INTO Type (libellé) VALUES ('Batterie');
+
+
+
+
 
 CREATE TABLE "MATERIEL" (
 	"id_mat"	INTEGER,
