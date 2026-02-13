@@ -7,15 +7,15 @@ CREATE TABLE "TYPE" (
 
 -- Insertion des données de TYPE 
 
-INSERT INTO Type (libellé) VALUES ('PC');
-INSERT INTO Type (libellé) VALUES ('Écran');
-INSERT INTO Type (libellé) VALUES ('CPU');
-INSERT INTO Type (libellé) VALUES ('RAM');
-INSERT INTO Type (libellé) VALUES ('Disque');
-INSERT INTO Type (libellé) VALUES ('GPU');
-INSERT INTO Type (libellé) VALUES ('Carte réseau');
-INSERT INTO Type (libellé) VALUES ('OS');
-INSERT INTO Type (libellé) VALUES ('Batterie');
+INSERT INTO TYPE (libellé) VALUES ('PC');
+INSERT INTO TYPE (libellé) VALUES ('Écran');
+INSERT INTO TYPE (libellé) VALUES ('CPU');
+INSERT INTO TYPE (libellé) VALUES ('RAM');
+INSERT INTO TYPE (libellé) VALUES ('Disque');
+INSERT INTO TYPE (libellé) VALUES ('GPU');
+INSERT INTO TYPE (libellé) VALUES ('Carte réseau');
+INSERT INTO TYPE (libellé) VALUES ('OS');
+INSERT INTO TYPE (libellé) VALUES ('Batterie');
 
  -- Création de la table MATERIEL
 CREATE TABLE "MATERIEL" (
