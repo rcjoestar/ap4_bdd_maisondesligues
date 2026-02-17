@@ -1,7 +1,6 @@
 <?php
-  $host = 'localhost'
-  $charset = 'utf8';
-  $user = 'root';
-  $password = 'root';
-  $dbname = 'M2L2';
-?>
+    $host = 'localhost';
+    $dbname = 'm2l2';
+    $charset = 'utf8';
+    $user = 'root';
+    $password = '';
