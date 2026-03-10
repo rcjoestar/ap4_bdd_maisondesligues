@@ -1,39 +1,35 @@
--- Création de la table TYPE
-CREATE TABLE "TYPE" (
-	"id_type"	INTEGER,
-	"libellé"	TEXT NOT NULL UNIQUE,
-	PRIMARY KEY("id_type" AUTOINCREMENT)
-);
+CREATE TABLE TYPE (
+                      id_type INT NOT NULL AUTO_INCREMENT,
+                      libelle VARCHAR(255) NOT NULL,
+                      PRIMARY KEY (id_type),
+                      UNIQUE (libelle)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Insertion des données de TYPE 
-
-INSERT INTO TYPE (libellé) VALUES ('PC');
-INSERT INTO TYPE (libellé) VALUES ('Écran');
-INSERT INTO TYPE (libellé) VALUES ('CPU');
-INSERT INTO TYPE (libellé) VALUES ('RAM');
-INSERT INTO TYPE (libellé) VALUES ('Disque');
-INSERT INTO TYPE (libellé) VALUES ('GPU');
-INSERT INTO TYPE (libellé) VALUES ('Carte réseau');
-INSERT INTO TYPE (libellé) VALUES ('OS');
-INSERT INTO TYPE (libellé) VALUES ('Batterie');
-
- -- Création de la table MATERIEL
-CREATE TABLE "MATERIEL" (
-	"id_mat"	INTEGER,
-	"nom"	TEXT NOT NULL,
-	"année"	INTEGER,
-	"details"	TEXT,
-	"id_type"	INTEGER NOT NULL,
-	"id_parent"	INTEGER,
-	PRIMARY KEY("id_mat"),
-	FOREIGN KEY("id_parent") REFERENCES "MATERIEL"("id_mat"),
-	FOREIGN KEY("id_type") REFERENCES "TYPE"("id_type")
-);
+INSERT INTO TYPE (libelle) VALUES ('PC');
+INSERT INTO TYPE (libelle) VALUES ('Écran');
+INSERT INTO TYPE (libelle) VALUES ('CPU');
+INSERT INTO TYPE (libelle) VALUES ('RAM');
+INSERT INTO TYPE (libelle) VALUES ('Disque');
+INSERT INTO TYPE (libelle) VALUES ('GPU');
+INSERT INTO TYPE (libelle) VALUES ('Carte réseau');
+INSERT INTO TYPE (libelle) VALUES ('OS');
+INSERT INTO TYPE (libelle) VALUES ('Batterie');
 
 
--- Insertion des données de MATERIEL
+CREATE TABLE MATERIEL (
+                          id_mat INT NOT NULL,
+                          nom VARCHAR(255) NOT NULL,
+                          annee INT,
+                          details TEXT,
+                          id_type INT NOT NULL,
+                          id_parent INT,
+                          PRIMARY KEY (id_mat),
+                          FOREIGN KEY (id_parent) REFERENCES MATERIEL(id_mat),
+                          FOREIGN KEY (id_type) REFERENCES TYPE(id_type)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO MATERIEL VALUES (1, 'PC  1 – Unité centrale', 2016, NULL, 2 NULL) ;
+
+INSERT INTO MATERIEL VALUES (1, 'PC  1 – Unité centrale', 2016, NULL, 2, NULL);
 INSERT INTO MATERIEL VALUES (2, 'PC 2 – Unité centrale', 2017, NULL, 2, NULL);
 INSERT INTO MATERIEL VALUES (3, 'PC 3 – Portable', 2015, 'Inspiron 15-3558', 2, NULL);
 INSERT INTO MATERIEL VALUES (4, 'Écran A', 2012, 'HP LA1951g – 19’’ – 1280×1024 – 60 Hz', 3, NULL);
@@ -56,4 +52,3 @@ INSERT INTO MATERIEL VALUES (31, 'RAM PC3', 2015, '4 Go DDR3L', 4, 3);
 INSERT INTO MATERIEL VALUES (32, 'Disque PC3', 2015, 'HDD WD Blue 500 Go', 5, 3);
 INSERT INTO MATERIEL VALUES (33, 'Batterie PC3', 2015, 'usée (≈ 40 min)', 9, 3);
 INSERT INTO MATERIEL VALUES (34, 'OS PC3', 2015, 'Windows 10 Pro', 8, 3);
-

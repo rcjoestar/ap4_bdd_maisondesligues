@@ -27,7 +27,7 @@ try {
 
 // Lecture des matériels avec leur type
 $requete = $connexion->prepare(
-        'SELECT MATERIEL.id_mat, MATERIEL.nom, MATERIEL.details, TYPE.libellé
+        'SELECT MATERIEL.id_mat, MATERIEL.nom, MATERIEL.details, TYPE.libelle
      FROM MATERIEL
      JOIN TYPE ON MATERIEL.id_type = TYPE.id_type'
 );
@@ -49,7 +49,7 @@ $materiels = $requete->fetchAll(PDO::FETCH_ASSOC);
         <tr>
             <td><a href="<?= $url ?>"><?= htmlspecialchars($m['nom']) ?></a></td>
             <td><?= htmlspecialchars($m['details']) ?></td>
-            <td><?= htmlspecialchars($m['libellé']) ?></td>
+            <td><?= htmlspecialchars($m['libelle']) ?></td>
         </tr>
     <?php endforeach; ?>
 </table>
